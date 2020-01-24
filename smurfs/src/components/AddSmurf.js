@@ -11,30 +11,30 @@ const AddSmurf = () => {
     const {setSmurfsList, nameInputClassName, setNameInputClassName, ageInputClassName, setAgeInputClassName, heightInputClassName, setHeightInputClassName} = useContext(SmurfsContext);
 
     const handleNameChanges = e => {
-        if (name === ""){
-            setNameInputClassName("emptyField")
-        }
         setName([e.target.value]);
+        if (e.target.value.length === 0){
+            setNameInputClassName("emptyField")
+        }else {
         setNameInputClassName("");
-        
+        }
     }
 
     const handleAgeChanges = e => {
-        if (age === ""){
-            setAgeInputClassName("emptyField")
-        }
         setAge([e.target.value]);
+        if (e.target.value.length === 0){
+            setAgeInputClassName("emptyField")
+        } else {
         setAgeInputClassName("");
-        
+        }
     }
 
     const handleHeightChanges = e => {
-        if (height === ""){
-            setHeightInputClassName("emptyField")
-        }
         setHeight([e.target.value]);
+        if (e.target.value.length === 0){
+            setHeightInputClassName("emptyField")
+        }else {
         setHeightInputClassName("")
-        
+        }
     }
 
     const handleAddSmurf = (name, age, height) => {
