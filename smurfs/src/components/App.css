@@ -26,3 +26,34 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.smurfsListContainer{
+  border-top: solid black 1px;
+  margin-top: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.smurfContainer{
+  margin: 0;
+  padding: 0;
+  border: solid black 1px;
+  width: 30%;
+  margin: 1%;
+}
+.smurfContainer:nth-child(odd){
+  background-color: #62cdfd;
+}
+.smurfContainer:nth-child(even){
+  background-color: #fdd062;
+}
+
+.emptyField{
+  background-color: rgb(255, 190, 190);
+  border: red solid 1px;
+}
+
+.addButton {
+  margin: 1%;
+}
