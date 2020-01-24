@@ -3,15 +3,15 @@ import React, {useContext} from "react";
 import SmurfsContext from "../contexts/SmurfsContext";
 
 const SmurfsList = () => {
-    const {smurfsList, setSmurfsList} = useContext(SmurfsContext);
+    const {smurfsList} = useContext(SmurfsContext);
 
     return (
-        <div>
+        <div className="smurfsListContainer">
             {smurfsList.map((item, index)=>(
-                <div key={index}>
-                    <p>{item.name}</p>
-                    <p>{item.age}</p>
-                    <p>{item.height}</p>
+                <div key={index} className="smurfContainer">
+                    <p>Name: {item.name}</p>
+                    <p>Age: {item.age}</p>
+                    <p>Height: {item.height}</p>
                 </div>
             ))}
         </div>

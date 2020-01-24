@@ -8,7 +8,7 @@ const AddSmurf = () => {
     const [age, setAge] = useState("");
     const [height, setHeight] = useState("");
 
-    const {smurfsList, setSmurfsList} = useContext(SmurfsContext);
+    const {setSmurfsList} = useContext(SmurfsContext);
 
     const handleNameChanges = e => {
         setName([e.target.value]);
