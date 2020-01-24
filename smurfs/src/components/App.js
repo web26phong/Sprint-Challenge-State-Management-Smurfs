@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import SmurfsList from "./SmurfsList";
 import SmurfsContext from "../contexts/SmurfsContext";
 
 import "./App.css";
 
-class App extends Component {
-  render() {
+const App = () => {
+  const [smurfs, setSmurfs] = useState([]);
+  
     return (
       <SmurfsContext.Provider>
         <div className="App">
@@ -16,6 +17,5 @@ class App extends Component {
       </SmurfsContext.Provider>
     );
   }
-}
 
 export default App;
