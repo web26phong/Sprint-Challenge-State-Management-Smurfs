@@ -58,16 +58,16 @@ const AddSmurf = () => {
     }
 
     const handleSubmit = () => {
-        if (name === "" || name === null){
+        if (name === "" || name === undefined){
             setNameInputClassName("emptyField");
         }
-        if (age === "" || age === null){
+        if (age === "" || age=== undefined){
             setAgeInputClassName("emptyField")
         }
-        if (height === "" || height === null){
+        if (height === "" || height=== undefined){
             setHeightInputClassName("emptyField")
         }
-        else {
+        else if (nameInputClassName === "" && ageInputClassName === "" && heightInputClassName === "") {
             handleAddSmurf(name,age,height);
             setNameInputClassName("");
             setAgeInputClassName("");
@@ -78,7 +78,7 @@ const AddSmurf = () => {
     return (
         <div>
             <input className={nameInputClassName} required type="text" value={name} onChange={handleNameChanges} placeholder="Enter Name"></input>
-            <input className={ageInputClassName} required type="number" value={age} onChange={handleAgeChanges} placeholder="Enter Age"></input>
+            <input className={ageInputClassName} required type="number" min="0" value={age} onChange={handleAgeChanges} placeholder="Enter Age"></input>
             <input className={heightInputClassName} required type="text" value={height} onChange={handleHeightChanges} placeholder="Enter Height"></input>
             <button className="addButton" onClick={() => handleSubmit()}>Add Smurf</button>
         </div>
