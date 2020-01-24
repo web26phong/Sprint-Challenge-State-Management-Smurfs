@@ -9,12 +9,10 @@ import "./App.css";
 
 const App = () => {
   const [smurfsList, setSmurfsList] = useState([]);
-  console.log("this is the list:",smurfsList)
 
   useEffect(()=>{
     Axios.get(`http://localhost:3333/smurfs`)
     .then(res => {
-      console.log(res)
       setSmurfsList(res.data)
     })
     .catch(err => {
