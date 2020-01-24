@@ -11,18 +11,30 @@ const AddSmurf = () => {
     const {setSmurfsList, nameInputClassName, setNameInputClassName, ageInputClassName, setAgeInputClassName, heightInputClassName, setHeightInputClassName} = useContext(SmurfsContext);
 
     const handleNameChanges = e => {
+        if (name === ""){
+            setNameInputClassName("emptyField")
+        }
         setName([e.target.value]);
         setNameInputClassName("");
+        
     }
 
     const handleAgeChanges = e => {
+        if (age === ""){
+            setAgeInputClassName("emptyField")
+        }
         setAge([e.target.value]);
         setAgeInputClassName("");
+        
     }
 
     const handleHeightChanges = e => {
+        if (height === ""){
+            setHeightInputClassName("emptyField")
+        }
         setHeight([e.target.value]);
         setHeightInputClassName("")
+        
     }
 
     const handleAddSmurf = (name, age, height) => {
@@ -46,13 +58,13 @@ const AddSmurf = () => {
     }
 
     const handleSubmit = () => {
-        if (name === ""){
+        if (name === "" || name === null){
             setNameInputClassName("emptyField");
         }
-        if (age === ""){
+        if (age === "" || age === null){
             setAgeInputClassName("emptyField")
         }
-        if (height === ""){
+        if (height === "" || height === null){
             setHeightInputClassName("emptyField")
         }
         else {
@@ -65,9 +77,9 @@ const AddSmurf = () => {
 
     return (
         <div>
-            <input className={nameInputClassName} type="text" value={name} onChange={handleNameChanges} placeholder="Enter Name"></input>
-            <input className={ageInputClassName} type="number" value={age} onChange={handleAgeChanges} placeholder="Enter Age"></input>
-            <input className={heightInputClassName} type="text" value={height} onChange={handleHeightChanges} placeholder="Enter Height"></input>
+            <input className={nameInputClassName} required type="text" value={name} onChange={handleNameChanges} placeholder="Enter Name"></input>
+            <input className={ageInputClassName} required type="number" value={age} onChange={handleAgeChanges} placeholder="Enter Age"></input>
+            <input className={heightInputClassName} required type="text" value={height} onChange={handleHeightChanges} placeholder="Enter Height"></input>
             <button className="addButton" onClick={() => handleSubmit()}>Add Smurf</button>
         </div>
     )
