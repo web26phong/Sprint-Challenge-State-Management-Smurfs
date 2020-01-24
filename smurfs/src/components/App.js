@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
-import Smurfs from "../contexts/Smurfs";
+import SmurfsList from "./SmurfsList";
+import SmurfsContext from "../contexts/SmurfsContext";
 
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <Smurfs.Provider>
+      <SmurfsContext.Provider>
         <div className="App">
           <h1>SMURFS! 2.0 W/ Redux</h1>
+          <SmurfsList />
         </div>
-      </Smurfs.Provider>
+      </SmurfsContext.Provider>
     );
   }
 }
