@@ -9,6 +9,9 @@ import "./App.css";
 
 const App = () => {
   const [smurfsList, setSmurfsList] = useState([]);
+  const [nameInputClassName, setNameInputClassName] = useState("");
+  const [ageInputClassName, setAgeInputClassName] = useState("");
+  const [heightInputClassName, setHeightInputClassName] = useState("");
 
   useEffect(()=>{
     Axios.get(`http://localhost:3333/smurfs`)
@@ -21,7 +24,7 @@ const App = () => {
   }, [])
 
     return (
-      <SmurfsContext.Provider value={{smurfsList, setSmurfsList}}>
+      <SmurfsContext.Provider value={{smurfsList, setSmurfsList, setNameInputClassName, nameInputClassName, ageInputClassName, setAgeInputClassName, heightInputClassName, setHeightInputClassName}}>
         <div className="App">
           <h1>SMURFS! 2.0 W/ Redux</h1>
           <AddSmurf />
